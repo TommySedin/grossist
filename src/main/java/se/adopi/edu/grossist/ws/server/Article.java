@@ -1,10 +1,8 @@
-package se.adopi.edu.grossist;
+package se.adopi.edu.grossist.ws.server;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -27,4 +25,13 @@ public class Article {
 	public String getName() { return name; }
 	public float getCostPerUnit() { return costPerUnit; }
 	public String getUnit() { return unit; }
+
+	public static List<Article> getArticles() {
+		List<Article> result = new ArrayList<>();
+		result.add(new Article("Mjöl", 2f, "kg"));
+		result.add(new Article("Mjölk", 5f, "l"));
+		result.add(new Article("Socker", 5f, "kg"));
+		result.add(new Article("Ägg", 0.1f, "st"));
+		return result;
+	}
 }

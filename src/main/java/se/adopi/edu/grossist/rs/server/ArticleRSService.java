@@ -1,4 +1,4 @@
-package se.adopi.edu.grossist;
+package se.adopi.edu.grossist.rs.server;
 
 import java.util.List;
 
@@ -11,10 +11,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/articles")
-public class ArticleListService {
-	@Inject
-	private List<Article> articles;
+import se.adopi.edu.grossist.rs.shared.Article;
+
+@Path("/rs/articles")
+public class ArticleRSService {
+	private List<Article> articles = Article.getArticles();
 	
 	@GET
 	@Path("/list")
